@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+}
+
+/* Header and Nav */
+
+header {
+    background-color: red;
+    height: 50px;
+    display: grid;
+    grid-template: 1fr / 10px 1fr 1fr 10px;
+    align-items: center;
+}
+h2 {
+    color: white;
+    grid-column: 2;
+}
+nav {
+    grid-column: -3;
+    display: flex;
+    align-content: center;
+    justify-content: end;
+}
+
+.burger-menu {
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    height: 35px;
+    width: 35px;
+}
+.menu-bar {
+    background-color: white;
+    height: 7px;
+    border-radius: 3.5px;
+}
+/* Main Sit starts */
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;    
+}
+
+main {
+    display: grid;
+    grid-template-rows: [banner-start] 500px [banner-end];
+}
+
+/* Banner */
+
+.banner {
+    grid-row: banner;
+    background-image: url("../images/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+}
