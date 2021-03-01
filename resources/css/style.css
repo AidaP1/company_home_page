@@ -1,9 +1,20 @@
+@font-face {
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/kaushanscript/v9/vm8vdRfvXFLG3OLnsO15WYS5DG74wNJVMJ8b.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
+
 * {
     margin: 0;
     padding: 0;
 }
 html {
     box-sizing: border-box;
+    font-size: 18px;
   }
   *,
   *:before,
@@ -14,15 +25,20 @@ html {
 /* Header and Nav */
 
 header {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
     background-color: red;
     height: 50px;
     display: grid;
     grid-template: 1fr / 10px 1fr 1fr 10px;
     align-items: center;
 }
-h2 {
+header h2 {
     color: white;
     grid-column: 2;
+    font-family: 'Kaushan Script';
 }
 nav {
     grid-column: -3;
@@ -42,17 +58,21 @@ nav {
     height: 7px;
     border-radius: 3.5px;
 }
-/* Main Sit starts */
+/* Main Site Starts */
 
 .container {
+    position: relative;
+    top: 50px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;    
+    grid-template-columns: 1fr;  
+    grid-template-rows:  auto 50px; 
 }
 
 main {
+    background-color: black;
     display: grid;
-    grid-template-rows: [banner-start] 500px [banner-end];
+    grid-template-rows: [banner-start] 500px [banner-end events-start] auto [events-end] 10px [tables-start] 300px [tables-end];
 }
 
 /* Banner */
@@ -62,4 +82,139 @@ main {
     background-image: url("../images/hero-image.jpg");
     background-size: cover;
     background-position: center;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+}
+.splash {
+    background-color: black;
+    height: 150px;
+    grid-row: 2;
+    opacity: 0.9;
+    display: grid;
+    grid-template: 10% 1fr 1fr 10% / 1fr minmax(auto,80%) 1fr;
+    align-items: center;
+    font-family: 'Kaushan Script';
+    border-radius: 3px;
+}
+
+h1 {
+    color: red;
+    font-size: 2.5rem;
+}
+
+.splash h1 {
+    grid-area: 2 / 2;
+}
+
+h3 {
+    color: red;
+    font-size: ;
+}
+
+.splash h3 {
+    grid-area: 3 / 2;
+}
+
+/* Section Common Items */
+
+.section-title {
+    background-color: red;
+    height: 30px;
+    border-radius: 6px;
+    max-width: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'kaushan script', 'serif';
+}
+
+/* Events Section */
+
+.events {
+    grid-row: events;
+}
+
+.event-box {
+    grid-area: events;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: red;
+}
+
+.event-card {
+    width: 200px;
+    height: 200px;
+    border: solid 1px red;
+    margin: 5%;
+    display: grid;
+    grid-template: [img-start] 60% [img-end] 5px [title-start] 1fr [title-end date-start] 20px [date-end booking-start] 20px [booking-end] 5px / 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.event-img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    grid-area: img;
+}
+
+.event-img img {
+    height: auto;
+    max-width: 100%;
+}
+
+.event-card h4 {
+    font-family: 'Kaushan Script';
+    font-size: 1.6rem;
+    grid-area: title;
+}
+
+.event-card h6 {
+    grid-area: date;
+    font-size: 1rem;
+}
+
+.book-button {
+    grid-area: booking;
+    color: black;
+    background-color: red;
+    border-radius: 8px;
+    height: 16px;
+    max-width: 150px;
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tables Section */
+
+.tables {
+    grid-row: tables;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-image: url('../images/tables-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}   
+
+.tables .splash {
+    grid-row: 3;
+    grid-template-rows: 10% 1fr 10%;
+}
+
+p {
+    grid-area: 2 /2;
+    color: red;
+}
+
+/* Footer */
+
+footer {
+    background-color: red;
+    grid-row: -2;
 }
