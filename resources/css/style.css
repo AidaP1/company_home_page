@@ -5,15 +5,31 @@
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/kaushanscript/v9/vm8vdRfvXFLG3OLnsO15WYS5DG74wNJVMJ8b.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  @font-face {
-    font-family: 'Cinzel';
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UNirkOUuhpKKSTjw.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-display: swap;
-    src: url(https://fonts.gstatic.com/s/cinzel/v11/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnfY3lC2xcZqTFUw.woff) format('woff');
+    src: url(https://fonts.gstatic.com/s/opensans/v18/mem5YaGs126MiZpBA-UN7rgOUuhpKKSTjw.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
+}
   
 
 * {
@@ -101,41 +117,53 @@ main {
     grid-row: 2;
     opacity: 0.9;
     display: grid;
-    grid-template: 10% 1fr 1fr 10% / 1fr minmax(auto,80%) 1fr;
+    grid-template: 10% 1fr 5px 1fr 10% / 1fr minmax(auto,80%) 1fr;
     align-items: center;
-    font-family: 'Kaushan Script';
+    font-family: 'Open Sans';
     border-radius: 3px;
+}
+.menu-items {
+    display: none;
 }
 
 h1 {
-    color: #9d0a0e;
+    color: white;
     font-size: 1.8rem;
+    opacity: 1;
+    font-weight: 700;
 }
 
 .splash h1 {
     grid-area: 2 / 2;
+    font-size: 2.5rem;
+    line-height: 2.7rem;
+    text-align: center;
 }
 
 h3 {
-    color: #9d0a0e;
-    font-size: ;
+    color: white;
+    opacity: 1;
+    font-size: 1rem;
 }
 
 .splash h3 {
-    grid-area: 3 / 2;
+    grid-area: 4 / 2;
+    text-align: center;
 }
 
 /* Section Common Items */
 
 .section-title {
     background-color: #9d0a0e;
+    color: white;
     height: 30px;
     border-radius: 6px;
-    max-width: 380px;
+    width: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'kaushan script', 'serif';
+    font-family: 'Open Sans', 'san-serif';
 }
 
 /* Events Section */
@@ -178,7 +206,7 @@ h3 {
 
 .event-card h4 {
     font-family: 'Kaushan Script';
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     grid-area: title;
 }
 
@@ -189,7 +217,7 @@ h3 {
 
 .book-button {
     grid-area: booking;
-    color: black;
+    color: white;
     background-color: #9d0a0e;
     border-radius: 8px;
     height: 16px;
@@ -198,6 +226,10 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.book-button h5 {
+    font-size: 0.6rem;
 }
 
 /* Tables Section */
@@ -222,7 +254,7 @@ h3 {
 p {
     grid-area: 2 /2;
     color: #9d0a0e;
-    font-family: 'cinzel','serif';
+    font-family: 'Open Sans','serif';
     font-size: 0.7rem;
 }
 
@@ -251,6 +283,7 @@ footer {
     align-items: center;
     justify-content: center;
     height: 100%;
+    
 }
 .social-img {
     height: 100%;
@@ -267,4 +300,67 @@ footer {
 .social-links h5 {
     grid-column: span 3;
     font-size: 0.6rem;
+}
+
+@media only screen and (min-width: 800px) {
+    .events {
+        display: grid;
+        grid-template: auto auto / 1fr 40% 1fr;
+    }
+    .section-title {
+        grid-column: 2;
+        justify-self: center;
+        min-width: 300px;
+    }
+    .event-box {
+        grid-row: 2;
+        grid-column: 1/ span 3;
+    }
+    .tables {
+        grid-template: auto auto / 1fr 40% 1fr;
+    }
+    .tables .splash {
+        grid-column: 1 / span 3;
+    }
+    .burger-menu {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .banner {
+        grid-template-rows: repeat(3,1fr);
+    }
+    .banner .splash {
+        grid-row: 2;
+        height: 100%;
+    }
+    .banner h1 {
+        font-size: 5rem;
+    }
+    .banner h3 {
+        font-size: 2rem;
+    }
+    .tables p {
+        font-size: 1.2rem;
+    }
+    .menu-items {
+        display: grid;
+        grid-template: 1fr / repeat(3,1fr);
+        justify-items: center;
+        align-items: center;
+        color: white;
+        list-style-type: none;
+        font-size: 1.2rem;
+    }
+    #book-button {
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 150px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
